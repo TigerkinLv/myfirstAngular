@@ -1,0 +1,72 @@
+<!-- <h2>{{hero.name | uppercase}} Details</h2>
+<div><span>id: </span>{{hero.id}}</div>
+<div><span>name: </span>{{hero.name}}</div>
+
+<hr>
+
+<div>
+  <label>
+    name:
+    <input [(ngModel)]="hero.name" placeholder="name">
+  </label>
+  <div>注释：[(ngModel)] 是angular 的双向数据绑定的语法</div>
+</div> -->
+
+<!-- <h2>My Heroes</h2>
+<ul class="heroes">
+  <li>
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul> -->
+<!-- 注释   类绑定 [class.some-css-class]="some-condition"  设置到元素-->
+<!-- <h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero===selectedHero">
+    {{hero.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedHero">
+    <h2>{{selectedHero.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedHero.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="selectedHero.name" placeholder="name">
+      </label>
+    </div>
+  
+  </div> -->
+
+
+
+  
+  <!-- 注释  [hero]="selectedHero"  是一个angular 属性绑定 -->
+  <!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
+
+
+<!-- <h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul> -->
+
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
+
+
+<hr>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button class="delete" title="delete hero" (click)="delete(hero)">X</button>
+  </li>
+</ul>
+
+<div>
+  <label>heroName: <input #heroName></label>
+  <button (click)="add(heroName.value); heroName.value=''">add</button>
+</div>
